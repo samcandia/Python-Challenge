@@ -20,7 +20,7 @@ The dataset is composed of two columns: "Date" and "Profit/Losses".
 
 In addition, your final script should both print the analysis to the terminal and export a text file with the results.
 
-PyPoll Instructions
+# PyPoll Instructions
 
 In this Challenge, you are tasked with helping a small, rural town modernize its vote-counting process.
 
