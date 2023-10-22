@@ -1,7 +1,7 @@
 import csv
 import os
 
-#creating empty lists
+#creating empty lists and defining variables
 totalvotes = 0
 candidates = []
 votes = {}
@@ -12,6 +12,7 @@ with open(path, 'r') as file:
     csvreader = csv.reader(file, delimiter=",")
     skipheader = next(csvreader)
     
+#find total votes and candidate names    
     for row in csvreader:
         candidatename = row[2]
         totalvotes = totalvotes + 1
@@ -21,12 +22,14 @@ with open(path, 'r') as file:
             votes[candidatename] = 0
         votes[candidatename] = votes[candidatename] + 1
 
+#begin exporting results 
 with open("analysis.txt", 'w') as analysis:
      
     print1 = (f"Election Results\n" f"----------------\n" f"Total Votes:{totalvotes}\n" f"----------------\n")
     print(print1)
     analysis.write(print1)
 
+calculate percent of votes and total votes for EACH candidate
     for candidates in votes: 
         percentage = (round(votes[candidates]/totalvotes * 100, 3))
         candidatetotal = votes.get(candidates)
